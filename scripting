@@ -1,0 +1,25 @@
+pipeline
+{
+agent:any
+stages{
+stage('build'){
+step{
+sh 'mvn compile'
+}
+
+}
+
+
+}
+stages('package')
+{
+sh 'mvn package'
+
+}
+stages('install'){
+sh 'mvn install'
+
+}
+
+
+}
